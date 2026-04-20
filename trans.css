@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.div3 {
+  height: 200px;
+  width: 200px;
+  perspective: 1000px;
+}
+
+.inner{
+  height: 100%;
+  width: 100%;
+position: relative
+transform-style: preserve-3d;
+transform: all 1s linear;
+}
+
+.front, .back {
+height: 100%;
+width: 100%;
+position: absolute;
+backface-visibility: hidden;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.front {
+background-color: blue;
+}
+
+.back {
+
+  background-color: red;
+  transform: rotateY(180deg);
+}
+
+.big:hover .inner {
+transform: rotateY(180deg);
+}

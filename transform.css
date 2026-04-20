@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* div {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  
+} */
+
+.div1 {
+  transform: translateX(100px) skewX(20deg) scale(0.5);
+  background-color: blue;
+  opacity: 0;
+  transition: all 3s linear;
+}
+
+.div2:active + .div1 {
+  background-color: red;
+  transform: translate(0) skew(0) scale(1);
+  opacity: 1;
+}
+
+
+button {
+  background-color: red;
+  color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  transition: all 1s ease-in-out;
+}
+
+
+button:hover {
+  transform: translateY(-50px);
+  box-shadow: 0 3px 3px 0 red;
+}
+
+.input {
+  border: 2px solid black;
+  transition: all 0.5s linear;
+}
+
+.input:focus {
+  border: 2px solid blue;
+  box-shadow: 0 0 2px 2px blue;
+  outline: none;
+}
+
+.div3 {
+  height: 200px;
+  width: 200px;
+  perspective: 1000px;
+}
+
+.inner {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 1s linear;
+}
+
+.front, .back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.front {
+  background-color: blue;
+}
+
+.back {
+  background-color: red;
+  transform: rotateY(180deg);
+}
+
+.div3:hover .inner {
+  transform: rotateY(180deg);
+}
+
+
+.box {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  /* animation: movement 8s linear infinite; */
+}
+
+
+@keyframes movement {
+  25% {background-color: blue; transform: translateX(200px);}
+  50% {background-color: green; transform: translate(200px, 200px);}
+  75% {background-color: orange; transform: translateY(200px);}
+  100%{background-color: red; transform: translate(0);}
+}
+
+
+.text {
+  position: relative;
+}
+
+
+.text>p {
+  position: absolute;
+  opacity: 0;
+  animation: show 12s linear infinite;
+}
+
+.text p:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.text p:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.text p:nth-child(3) {
+  animation-delay: 8s;
+}
+
+
+@keyframes show {
+  25% {opacity: 1;}
+  40% {opacity: 0;}
+  100% {opacity: 0;}
+}
